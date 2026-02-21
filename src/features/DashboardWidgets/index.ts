@@ -1,3 +1,5 @@
+export { computeBentoLayout, computeGridRows } from './bentoLayout';
+export type { BentoPlacement } from './bentoLayout';
 export { default as DashboardGrid } from './DashboardGrid';
 export { widgetEventBus } from './eventBus';
 export { registerBuiltinWidgets } from './registerBuiltinWidgets';
