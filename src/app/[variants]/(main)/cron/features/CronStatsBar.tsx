@@ -63,7 +63,7 @@ const CronStatsBar = memo(() => {
         <Statistic
           prefix={<Pause size={16} />}
           title={t('stats.paused')}
-          value={stats?.pausedJobs ?? 0}
+          value={stats ? stats.totalJobs - stats.activeJobs : 0}
           valueStyle={{ color: '#faad14' }}
         />
       </div>
@@ -71,7 +71,7 @@ const CronStatsBar = memo(() => {
         <Statistic
           prefix={<Activity size={16} />}
           title={t('stats.executions')}
-          value={stats?.totalExecutions ?? 0}
+          value={stats?.completedExecutions ?? 0}
         />
       </div>
     </div>

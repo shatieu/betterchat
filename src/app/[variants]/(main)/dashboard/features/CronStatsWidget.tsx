@@ -34,12 +34,12 @@ const CronStatsWidget = memo(() => {
         />
         <Statistic
           title={t('widgets.cronStats.paused')}
-          value={stats?.pausedJobs ?? 0}
+          value={stats ? stats.totalJobs - stats.activeJobs : 0}
           valueStyle={{ color: '#faad14' }}
         />
         <Statistic
           title={t('widgets.cronStats.executions')}
-          value={stats?.totalExecutions ?? 0}
+          value={stats?.completedExecutions ?? 0}
         />
       </Flexbox>
     </DashboardWidgetCard>

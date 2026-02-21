@@ -14,7 +14,7 @@ const { TextArea } = Input;
 const NotesWidget = memo(() => {
   const { t } = useTranslation('dashboard');
   const [notes, updateNotes] = useDashboardStore((s) => [s.notes, s.updateNotes]);
-  const debounceTimer = useRef<ReturnType<typeof setTimeout>>();
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {

@@ -8,17 +8,17 @@ import useSWR from 'swr';
 
 import { agentChannelService } from '@/services/agentChannel';
 
-const styles = createStaticStyles({
-  label: ({ css }) => css`
+const styles = createStaticStyles(({ css }) => ({
+  label: css`
     flex-shrink: 0;
     width: 120px;
   `,
-  row: ({ css }) => css`
+  row: css`
     min-height: 48px;
     padding-block: 12px;
     padding-inline: 0;
   `,
-});
+}));
 
 interface CronJobChannelSelectProps {
   agentId?: string;

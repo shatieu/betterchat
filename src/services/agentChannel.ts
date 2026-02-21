@@ -1,4 +1,5 @@
 import { type ChannelConfig, type ChannelType } from '@lobechat/types';
+
 import { lambdaClient } from '@/libs/trpc/client/lambda';
 
 /**

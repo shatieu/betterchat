@@ -1,4 +1,4 @@
-import { INSERT_TABLE_COMMAND } from '@lobehub/editor';
+import { type SlashOptions, INSERT_TABLE_COMMAND } from '@lobehub/editor';
 import { BookOpenTextIcon, LanguagesIcon, SpellCheckIcon, Table2Icon, TextSearchIcon } from 'lucide-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,7 @@ const SNIPPET_PROMPTS = {
   translate: 'Please translate the following to English:\n\n',
 };
 
-export const useSlashItems = () => {
+export const useSlashItems = (): SlashOptions['items'] => {
   const { t } = useTranslation('editor');
 
   return useMemo(

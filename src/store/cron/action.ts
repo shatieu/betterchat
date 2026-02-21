@@ -19,8 +19,8 @@ export const createCronActionSlice = (set: Setter, get: () => CronStore, _api?: 
 
 export interface CronStats {
   activeJobs: number;
-  pausedJobs: number;
-  totalExecutions: number;
+  completedExecutions: number;
+  pendingExecutions: number;
   totalJobs: number;
 }
 
@@ -85,6 +85,7 @@ export class CronActionImpl {
   useFetchCronJobs = (): SWRResponse<{
     data: AgentCronJob[];
     pagination: { hasMore: boolean; limit: number; offset: number; total: number };
+    success: boolean;
   }> => {
     const { filters, pagination } = this.#get();
     return useClientDataSWR(

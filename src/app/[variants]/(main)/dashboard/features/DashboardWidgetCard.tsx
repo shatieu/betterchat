@@ -2,9 +2,9 @@
 
 import { Flexbox } from '@lobehub/ui';
 import { Card, Dropdown, Skeleton, type MenuProps } from 'antd';
+import { createStyles } from 'antd-style';
 import { MoreHorizontal, type LucideIcon } from 'lucide-react';
 import { type ReactNode, memo } from 'react';
-import { createStyles } from 'antd-style';
 
 const useStyles = createStyles(({ css, token }) => ({
   card: css`

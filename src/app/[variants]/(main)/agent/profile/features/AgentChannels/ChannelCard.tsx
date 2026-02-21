@@ -1,12 +1,11 @@
 'use client';
 
+import { type ChannelType } from '@lobechat/types';
 import { ActionIcon, Flexbox, Icon } from '@lobehub/ui';
 import { Badge, Card, Col, Popconfirm, Row, Switch, Typography } from 'antd';
 import { type LucideIcon, Mail, Send, Trash2, Webhook } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { type ChannelType } from '@lobechat/types';
 
 const { Text } = Typography;
 

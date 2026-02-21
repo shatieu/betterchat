@@ -1,10 +1,9 @@
 'use client';
 
+import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 import { Form, Input, Modal, Select, Switch } from 'antd';
 import { memo, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 
 const { TextArea } = Input;
 

@@ -108,7 +108,7 @@ const CronJobTable = memo(() => {
         key: 'status',
         render: (_: unknown, record: AgentCronJob) => {
           const status = getStatusBadge(record);
-          return <Badge color={status.color} text={t(`status.${status.text.toLowerCase()}`)} />;
+          return <Badge color={status.color} text={t(`status.${status.text.toLowerCase()}` as any)} />;
         },
         title: t('list.status'),
         width: 120,

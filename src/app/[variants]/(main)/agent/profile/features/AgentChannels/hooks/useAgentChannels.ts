@@ -1,9 +1,8 @@
+import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 import { message } from 'antd';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';
-
-import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 
 import { agentChannelService } from '@/services/agentChannel';
 

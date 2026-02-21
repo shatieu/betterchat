@@ -1,12 +1,11 @@
 'use client';
 
+import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 import { Flexbox } from '@lobehub/ui';
 import { Button, Typography } from 'antd';
 import { Radio } from 'lucide-react';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { type ChannelConfig, type ChannelType } from '@lobechat/types';
 
 import { useAgentStore } from '@/store/agent';
 import { serverConfigSelectors, useServerConfigStore } from '@/store/serverConfig';
