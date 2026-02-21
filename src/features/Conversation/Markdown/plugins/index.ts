@@ -1,3 +1,5 @@
+import FileRef from './FileRef';
+import ImageRef from './ImageRef';
 import LobeArtifact from './LobeArtifact';
 import LobeThinking from './LobeThinking';
 import LocalFile from './LocalFile';
@@ -13,4 +15,6 @@ export const markdownElements: MarkdownElement[] = [
   LobeThinking,
   LocalFile,
   Mention,
+  ImageRef,
+  FileRef,
 ];
