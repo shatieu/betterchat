@@ -2,8 +2,7 @@
 
 import { ActionIcon, Flexbox, Icon } from '@lobehub/ui';
 import { Badge, Card, Col, Popconfirm, Row, Switch, Typography } from 'antd';
-import { Mail, Send, Trash2, Webhook } from 'lucide-react';
-import { type LucideIcon } from 'lucide-react';
+import { type LucideIcon, Mail, Send, Trash2, Webhook } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -120,5 +119,7 @@ const ChannelCards = memo<ChannelCardsProps>(
     );
   },
 );
+
+ChannelCards.displayName = 'ChannelCards';
 
 export default ChannelCards;

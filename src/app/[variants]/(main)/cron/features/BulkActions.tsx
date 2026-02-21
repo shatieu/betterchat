@@ -1,7 +1,7 @@
 'use client';
 
 import { Flexbox } from '@lobehub/ui';
-import { Button, App } from 'antd';
+import { App, Button } from 'antd';
 import { Pause, Play, Trash2 } from 'lucide-react';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +43,7 @@ const BulkActions = memo(() => {
 
   return (
     <Flexbox align="center" gap={8} horizontal style={{ padding: '8px 0' }}>
-      <span>{selectedIds.length} selected</span>
+      <span>{t('actions.selectedCount', { count: selectedIds.length })}</span>
       <Button icon={<Play size={14} />} size="small" onClick={handleBatchEnable}>
         {t('actions.batchEnable')}
       </Button>

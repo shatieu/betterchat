@@ -2,6 +2,7 @@ export default {
   'actions.batchDelete': 'Delete Selected',
   'actions.batchDisable': 'Disable Selected',
   'actions.batchEnable': 'Enable Selected',
+  'actions.selectedCount': '{{count}} selected',
   'actions.create': 'New Cron Job',
   'actions.delete': 'Delete',
   'actions.deleteConfirm': 'Are you sure you want to delete this cron job? This action cannot be undone.',

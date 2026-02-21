@@ -7,6 +7,7 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { type ChannelConfig, type ChannelType } from '@lobechat/types';
+
 import { useAgentStore } from '@/store/agent';
 import { serverConfigSelectors, useServerConfigStore } from '@/store/serverConfig';
 
@@ -88,5 +89,7 @@ const AgentChannels = memo(() => {
     </Flexbox>
   );
 });
+
+AgentChannels.displayName = 'AgentChannels';
 
 export default AgentChannels;

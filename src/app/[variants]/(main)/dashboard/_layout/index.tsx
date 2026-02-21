@@ -1,16 +1,14 @@
 'use client';
 
 import { Flexbox } from '@lobehub/ui';
-import { type FC } from 'react';
+import { createStaticStyles } from 'antd-style';
+import { type FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
 
 import { NavPanelPortal } from '@/features/NavPanel';
-import SideBarLayout from '@/features/NavPanel/SideBarLayout';
 import SideBarHeaderLayout from '@/features/NavPanel/SideBarHeaderLayout';
-
-import { createStaticStyles } from 'antd-style';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import SideBarLayout from '@/features/NavPanel/SideBarLayout';
 
 const styles = createStaticStyles(({ css, cssVar }) => ({
   mainContainer: css`

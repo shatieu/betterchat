@@ -1,7 +1,6 @@
 'use client';
 
-import { Flexbox } from '@lobehub/ui';
-import { Collapse, Empty, List, Skeleton, Tag } from 'antd';
+import { Empty, List, Skeleton } from 'antd';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { memo } from 'react';
@@ -9,9 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import useSWR from 'swr';
 
-import { type AgentCronJob } from '@/database/schemas/agentCronJob';
 import { lambdaClient } from '@/libs/trpc/client/lambda';
-import { agentCronJobService } from '@/services/agentCronJob';
 
 dayjs.extend(relativeTime);
 

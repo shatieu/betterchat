@@ -2,6 +2,7 @@
   "actions.batchDelete": "删除所选",
   "actions.batchDisable": "禁用所选",
   "actions.batchEnable": "启用所选",
+  "actions.selectedCount": "已选 {{count}} 项",
   "actions.create": "新建定时任务",
   "actions.delete": "删除",
   "actions.deleteConfirm": "确定要删除此定时任务吗？此操作无法撤销。",

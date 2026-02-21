@@ -67,4 +67,6 @@ const CronJobChannelSelect = memo<CronJobChannelSelectProps>(
   },
 );
 
+CronJobChannelSelect.displayName = 'CronJobChannelSelect';
+
 export default CronJobChannelSelect;

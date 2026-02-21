@@ -2,26 +2,26 @@
 
 import { Flexbox } from '@lobehub/ui';
 import { Skeleton, Statistic } from 'antd';
+import { createStyles } from 'antd-style';
 import { Activity, Clock, Pause, Play } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { createStyles } from 'antd-style';
 
 import { useCronStore } from '@/store/cron';
 
 const useStyles = createStyles(({ css, token }) => ({
+  statItem: css`
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: ${token.borderRadiusSM}px;
+    background: ${token.colorBgContainer};
+  `,
   statsBar: css`
     display: flex;
     gap: 16px;
     padding: 16px;
     border-radius: ${token.borderRadius}px;
     background: ${token.colorBgLayout};
-  `,
-  statItem: css`
-    flex: 1;
-    padding: 12px 16px;
-    border-radius: ${token.borderRadiusSM}px;
-    background: ${token.colorBgContainer};
   `,
 }));
 

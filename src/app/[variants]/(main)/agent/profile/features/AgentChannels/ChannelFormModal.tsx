@@ -209,4 +209,6 @@ const ChannelFormModal = memo<ChannelFormModalProps>(({ open, onCancel, onSubmit
   );
 });
 
+ChannelFormModal.displayName = 'ChannelFormModal';
+
 export default ChannelFormModal;
