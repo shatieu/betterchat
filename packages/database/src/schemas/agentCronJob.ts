@@ -5,6 +5,7 @@ import { boolean, index, integer, jsonb, pgTable, text, timestamp } from 'drizzl
 import { idGenerator } from '../utils/idGenerator';
 import { timestamps } from './_helpers';
 import { agents } from './agent';
+import { agentChannels } from './agentChannel';
 import { chatGroups } from './chatGroup';
 import { users } from './user';
 
@@ -45,6 +46,9 @@ export const agentCronJobs = pgTable(
 
     // Execution conditions (stored as JSONB)
     executionConditions: jsonb('execution_conditions').$type<ExecutionConditions>(),
+
+    // Delivery channel (optional)
+    channelId: text('channel_id').references(() => agentChannels.id, { onDelete: 'set null' }),
 
     // Execution statistics
     lastExecutedAt: timestamp('last_executed_at'),
