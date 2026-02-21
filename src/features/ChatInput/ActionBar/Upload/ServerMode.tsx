@@ -5,13 +5,15 @@ import { Upload } from 'antd';
 import { css, cx } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { ArrowRight, FileUp, FolderUp, ImageUp, LibraryBig, Paperclip } from 'lucide-react';
-import { memo, Suspense, useState } from 'react';
+import { memo, Suspense, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { message } from '@/components/AntdStaticMethods';
+import { insertFileMarkers } from '@/components/DragUploadZone/usePasteFile';
 import FileIcon from '@/components/FileIcon';
 import RepoIcon from '@/components/LibIcon';
 import TipGuide from '@/components/TipGuide';
+import { useChatInputStore } from '@/features/ChatInput/store';
 import { AttachKnowledgeModal } from '@/features/LibraryModal';
 import { useModelSupportVision } from '@/hooks/useModelSupportVision';
 import { useAgentStore } from '@/store/agent';
@@ -38,6 +40,15 @@ const FileUpload = memo(() => {
   const { t } = useTranslation('chat');
 
   const upload = useFileStore((s) => s.uploadChatFiles);
+  const editor = useChatInputStore((s) => s.editor);
+
+  const uploadWithMarkers = useCallback(
+    async (files: File[]) => {
+      if (editor) insertFileMarkers(editor, files);
+      await upload(files);
+    },
+    [editor, upload],
+  );
 
   const agentId = useAgentId();
   const model = useAgentStore((s) => agentByIdSelectors.getAgentModelById(agentId)(s));
@@ -77,7 +88,7 @@ const FileUpload = memo(() => {
           showUploadList={false}
           beforeUpload={async (file) => {
             setDropdownOpen(false);
-            await upload([file]);
+            await uploadWithMarkers([file]);
 
             return false;
           }}
@@ -114,7 +125,7 @@ const FileUpload = memo(() => {
             }
 
             setDropdownOpen(false);
-            await upload([file]);
+            await uploadWithMarkers([file]);
 
             return false;
           }}
@@ -148,7 +159,7 @@ const FileUpload = memo(() => {
             }
 
             setDropdownOpen(false);
-            await upload([file]);
+            await uploadWithMarkers([file]);
 
             return false;
           }}

@@ -8,7 +8,7 @@ import { getFileListFromDataTransferItems } from './useLocalDragUpload';
  * Images → `[image: name.png]` or `[image]`
  * Other  → `[file: name.ext]`
  */
-const buildFileMarker = (file: File): string => {
+export const buildFileMarker = (file: File): string => {
   if (file.type.startsWith('image')) {
     return file.name ? `[image: ${file.name}]` : '[image]';
   }
@@ -19,7 +19,7 @@ const buildFileMarker = (file: File): string => {
  * Insert inline reference markers into the editor for each pasted file.
  * Appends to the current markdown content so the user sees where attachments relate.
  */
-const insertFileMarkers = (editor: IEditor, files: File[]) => {
+export const insertFileMarkers = (editor: IEditor, files: File[]) => {
   if (files.length === 0) return;
 
   const markers = files.map(buildFileMarker).join(' ');
