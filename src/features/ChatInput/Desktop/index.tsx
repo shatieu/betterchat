@@ -21,6 +21,8 @@ import InputEditor from '../InputEditor';
 import SendArea from '../SendArea';
 import TypoBar from '../TypoBar';
 import ContextContainer from './ContextContainer';
+import PastedTextPreview from './PastedTextPreview';
+import { usePasteTextPreview } from './PastedTextPreview/usePasteTextPreview';
 
 const styles = createStaticStyles(({ css }) => ({
   container: css`
@@ -90,9 +92,18 @@ const DesktopChatInput = memo<DesktopChatInputProps>(
 
     const chatKey = useChatStore(chatSelectors.currentChatKey);
 
+    // Pasted text preview tracking
+    const { pastedTexts, dismissPastedText, clearAllPastedTexts } =
+      usePasteTextPreview(editor);
+
     useEffect(() => {
       if (editor) editor.focus();
     }, [chatKey, editor]);
+
+    // Clear pasted text previews when chat changes
+    useEffect(() => {
+      clearAllPastedTexts();
+    }, [chatKey, clearAllPastedTexts]);
 
     const shouldShowContextContainer =
       leftActions.flat().includes('fileUpload') || hasContextSelections || hasFiles;
@@ -140,6 +151,17 @@ const DesktopChatInput = memo<DesktopChatInputProps>(
             <Flexbox gap={0}>
               {extentHeaderContent}
               {showTypoBar && <TypoBar />}
+              {pastedTexts.length > 0 && (
+                <Flexbox gap={4} paddingBlock={4} paddingInline={expand ? 0 : 8}>
+                  {pastedTexts.map((text, index) => (
+                    <PastedTextPreview
+                      key={index}
+                      text={text}
+                      onDismiss={() => dismissPastedText(index)}
+                    />
+                  ))}
+                </Flexbox>
+              )}
               {contextContainerNode}
             </Flexbox>
           }

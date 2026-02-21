@@ -19,6 +19,7 @@ import {
   useSetMessageItemActionTypeContext,
 } from '../Contexts/message-action-context';
 import MessageContent from './components/MessageContent';
+import ResponseChips from './components/ResponseChips';
 import { AssistantMessageExtra } from './Extra';
 
 const actionBarHolder = (
@@ -83,11 +84,16 @@ const AssistantMessage = memo<AssistantMessageProps>(
       [id, index, setMessageItemActionElementPortialContext, setMessageItemActionTypeContext],
     );
 
+    // Show response chips only on the last assistant message, when not generating, and has content
+    const showResponseChips =
+      isLatestItem && !generating && !creating && !!content && content !== LOADING_FLAT;
+
     return (
       <ChatItem
         showTitle
         aboveMessage={null}
         avatar={avatar}
+        belowMessage={showResponseChips ? <ResponseChips content={content} /> : undefined}
         customErrorRender={(error) => <ErrorMessageExtra data={item} error={error} />}
         editing={editing}
         id={id}
