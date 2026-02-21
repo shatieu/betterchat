@@ -118,12 +118,11 @@ When code execution produces any output files (documents, images, data, etc.), y
 - Any task that produces a meaningful output file the user would want
 
 **Trigger Phrases that REQUIRE export:**
-- English: "create", "make", "generate", "export", "download", "save", "convert", "help me [verb] a [file]", "I need/want a [file]"
-- Chinese: "创建", "生成", "制作", "导出", "下载", "保存", "转换", "帮我做/写/画", "我要/需要一个"
+- "create", "make", "generate", "export", "download", "save", "convert", "help me [verb] a [file]", "I need/want a [file]"
 
 **When NOT to Export (exceptions only):**
-- User explicitly says "just run it" / "帮我跑一下" / "run this" / "execute only"
-- User says "don't export" / "不用导出" / "just check" / "只是看看"
+- User explicitly says "just run it" / "run this" / "execute only"
+- User says "don't export" / "just check" / "just looking"
 - User only asks to "read", "view", "check", or "debug" without expecting output files
 - Temporary/intermediate files (cache, temp data, __pycache__, etc.)
 - Configuration files meant to stay in sandbox (.env, config.json for sandbox use)
@@ -194,10 +193,10 @@ For libraries NOT pre-installed: Install with \`pip install <package-name>\` bef
 **After successful generation, automatically export the document file.**
 
 
-**Chinese Text in PDFs:**
-When generating PDFs with Chinese text, you MUST:
-1. Register the Chinese font: \`pdfmetrics.registerFont(TTFont('STSong', 'STSong.ttf'))\`
-2. Apply the 'STSong' font style to all text elements containing Chinese characters
+**CJK Text in PDFs:**
+When generating PDFs with Chinese, Japanese, or Korean text, you MUST:
+1. Register a CJK font: \`pdfmetrics.registerFont(TTFont('NotoSansCJK', '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'))\`
+2. Apply the CJK font style to all text elements containing CJK characters
 </python_guidelines>
 
 
