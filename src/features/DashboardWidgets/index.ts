@@ -1,0 +1,11 @@
+export { computeBentoLayout, computeGridRows } from './bentoLayout';
+export type { BentoPlacement } from './bentoLayout';
+export { default as DashboardGrid } from './DashboardGrid';
+export { widgetEventBus } from './eventBus';
+export { registerBuiltinWidgets } from './registerBuiltinWidgets';
+export { widgetSharedState } from './sharedState';
+export { default as WidgetContainer } from './WidgetContainer';
+export { default as WidgetErrorBoundary } from './WidgetErrorBoundary';
+export { default as WidgetPicker } from './WidgetPicker';
+export { default as WidgetRuntime } from './WidgetRuntime';
+export { getAllWidgets, getWidget, getWidgetManifest, registerWidget } from './widgetRegistry';

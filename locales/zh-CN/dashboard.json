@@ -17,5 +17,19 @@
   "widgets.notes.title": "笔记",
   "widgets.recentConversations.empty": "暂无最近的对话",
   "widgets.recentConversations.title": "最近对话",
-  "widgets.recentConversations.viewAll": "查看全部"
+  "widgets.recentConversations.viewAll": "查看全部",
+  "widgetSystem.addWidget": "添加小组件",
+  "widgetSystem.configure": "配置",
+  "widgetSystem.noWidgets": "仪表盘上没有小组件。点击"添加小组件"开始使用。",
+  "widgetSystem.quickActions.agents": "智能体",
+  "widgetSystem.quickActions.cron": "定时任务",
+  "widgetSystem.quickActions.newChat": "新对话",
+  "widgetSystem.quickActions.settings": "设置",
+  "widgetSystem.remove": "移除",
+  "widgetSystem.resize": "调整大小",
+  "widgetSystem.sizes.full": "全宽",
+  "widgetSystem.sizes.large": "大",
+  "widgetSystem.sizes.medium": "中",
+  "widgetSystem.sizes.small": "小",
+  "widgetSystem.sizes.wide": "宽"
 }
