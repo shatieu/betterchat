@@ -6,6 +6,7 @@ import chat from './chat';
 import color from './color';
 import common from './common';
 import components from './components';
+import cron from './cron';
 import desktopOnboarding from './desktop-onboarding';
 import discover from './discover';
 import editor from './editor';
@@ -49,6 +50,7 @@ const resources = {
   color,
   common,
   components,
+  cron,
   'desktop-onboarding': desktopOnboarding,
   discover,
   editor,

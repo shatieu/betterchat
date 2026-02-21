@@ -119,6 +119,7 @@ export default {
   'cmdk.askLobeAI': 'Ask Lobe AI',
   'cmdk.community': 'Community',
   'cmdk.communitySupport': 'Community Support',
+  'cmdk.cron': 'Scheduled Tasks',
   'cmdk.contactUs': 'Contact Us',
   'cmdk.context.agent': 'Agent',
   'cmdk.context.community': 'Community',
@@ -143,6 +144,7 @@ export default {
   'cmdk.keywords.billing': 'billing payment invoice transaction',
 
   'cmdk.keywords.community': 'discover market assistant model provider mcp',
+  'cmdk.keywords.cron': 'cron schedule task automation timer',
 
   // CMDK search keywords (space-separated for i18n)
   'cmdk.keywords.contactUs': 'feedback issue bug problem',
@@ -472,6 +474,7 @@ export default {
   'tab.audio': 'Audio',
   'tab.chat': 'Chat',
   'tab.community': 'Community',
+  'tab.cron': 'Scheduled Tasks',
   'tab.discover': 'Discover',
   'tab.files': 'Files',
   'tab.home': 'Home',

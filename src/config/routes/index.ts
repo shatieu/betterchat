@@ -1,6 +1,7 @@
 import { type LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
+  Clock,
   FilePenIcon,
   Image,
   LibraryBigIcon,
@@ -97,6 +98,16 @@ export const NAVIGATION_ROUTES: NavigationRoute[] = [
     pathPrefix: '/memory',
   },
   {
+    cmdkKey: 'cmdk.cron',
+    electronKey: 'navigation.cron',
+    icon: Clock,
+    id: 'cron',
+    keywords: ['cron', 'schedule', 'task', 'automation', 'timer'],
+    keywordsKey: 'cmdk.keywords.cron',
+    path: '/cron',
+    pathPrefix: '/cron',
+  },
+  {
     cmdkKey: 'cmdk.settings',
     electronKey: 'navigation.settings',
     icon: Settings,
@@ -119,5 +130,5 @@ export const getRouteById = (id: string): NavigationRoute | undefined =>
  */
 export const getNavigableRoutes = (): NavigationRoute[] =>
   NAVIGATION_ROUTES.filter((r) =>
-    ['community', 'video', 'image', 'resource', 'page', 'memory'].includes(r.id),
+    ['community', 'video', 'image', 'resource', 'page', 'memory', 'cron'].includes(r.id),
   );

@@ -75,6 +75,12 @@ const Nav = memo(() => {
         url: '/image',
       },
       {
+        icon: getRouteById('cron')!.icon,
+        key: SidebarTabKey.Cron,
+        title: t('tab.cron'),
+        url: '/cron',
+      },
+      {
         hidden: !showMarket,
         icon: getRouteById('community')!.icon,
         key: SidebarTabKey.Community,
