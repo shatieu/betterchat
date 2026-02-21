@@ -120,6 +120,7 @@ export default {
   'cmdk.community': 'Community',
   'cmdk.communitySupport': 'Community Support',
   'cmdk.cron': 'Scheduled Tasks',
+  'cmdk.dashboard': 'Dashboard',
   'cmdk.contactUs': 'Contact Us',
   'cmdk.context.agent': 'Agent',
   'cmdk.context.community': 'Community',
@@ -145,6 +146,7 @@ export default {
 
   'cmdk.keywords.community': 'discover market assistant model provider mcp',
   'cmdk.keywords.cron': 'cron schedule task automation timer',
+  'cmdk.keywords.dashboard': 'dashboard overview widgets stats',
 
   // CMDK search keywords (space-separated for i18n)
   'cmdk.keywords.contactUs': 'feedback issue bug problem',
@@ -475,6 +477,7 @@ export default {
   'tab.chat': 'Chat',
   'tab.community': 'Community',
   'tab.cron': 'Scheduled Tasks',
+  'tab.dashboard': 'Dashboard',
   'tab.discover': 'Discover',
   'tab.files': 'Files',
   'tab.home': 'Home',

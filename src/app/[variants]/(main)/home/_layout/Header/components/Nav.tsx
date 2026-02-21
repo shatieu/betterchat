@@ -75,6 +75,12 @@ const Nav = memo(() => {
         url: '/image',
       },
       {
+        icon: getRouteById('dashboard')!.icon,
+        key: SidebarTabKey.Dashboard,
+        title: t('tab.dashboard'),
+        url: '/dashboard',
+      },
+      {
         icon: getRouteById('cron')!.icon,
         key: SidebarTabKey.Cron,
         title: t('tab.cron'),

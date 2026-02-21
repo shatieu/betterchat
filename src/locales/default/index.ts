@@ -7,6 +7,7 @@ import color from './color';
 import common from './common';
 import components from './components';
 import cron from './cron';
+import dashboard from './dashboard';
 import desktopOnboarding from './desktop-onboarding';
 import discover from './discover';
 import editor from './editor';
@@ -51,6 +52,7 @@ const resources = {
   common,
   components,
   cron,
+  dashboard,
   'desktop-onboarding': desktopOnboarding,
   discover,
   editor,

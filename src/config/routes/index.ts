@@ -4,6 +4,7 @@ import {
   Clock,
   FilePenIcon,
   Image,
+  LayoutDashboard,
   LibraryBigIcon,
   Settings,
   ShapesIcon,
@@ -98,6 +99,16 @@ export const NAVIGATION_ROUTES: NavigationRoute[] = [
     pathPrefix: '/memory',
   },
   {
+    cmdkKey: 'cmdk.dashboard',
+    electronKey: 'navigation.dashboard',
+    icon: LayoutDashboard,
+    id: 'dashboard',
+    keywords: ['dashboard', 'overview', 'widgets', 'stats'],
+    keywordsKey: 'cmdk.keywords.dashboard',
+    path: '/dashboard',
+    pathPrefix: '/dashboard',
+  },
+  {
     cmdkKey: 'cmdk.cron',
     electronKey: 'navigation.cron',
     icon: Clock,
@@ -130,5 +141,5 @@ export const getRouteById = (id: string): NavigationRoute | undefined =>
  */
 export const getNavigableRoutes = (): NavigationRoute[] =>
   NAVIGATION_ROUTES.filter((r) =>
-    ['community', 'video', 'image', 'resource', 'page', 'memory', 'cron'].includes(r.id),
+    ['community', 'video', 'image', 'resource', 'page', 'memory', 'dashboard', 'cron'].includes(r.id),
   );
