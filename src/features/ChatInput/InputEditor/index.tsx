@@ -3,7 +3,6 @@ import { HotkeyEnum, KeyEnum } from '@lobechat/types';
 import { isCommandPressed } from '@lobechat/utils';
 import {
   INSERT_MENTION_COMMAND,
-  INSERT_TABLE_COMMAND,
   ReactCodemirrorPlugin,
   ReactCodePlugin,
   ReactHRPlugin,
@@ -16,7 +15,6 @@ import {
 import { Editor, FloatMenu, SlashMenu, useEditorState } from '@lobehub/editor/react';
 import { combineKeys } from '@lobehub/ui';
 import { css, cx } from 'antd-style';
-import { Table2Icon } from 'lucide-react';
 import { memo, useEffect, useMemo, useRef } from 'react';
 import { useHotkeysContext } from 'react-hotkeys-hook';
 import { useTranslation } from 'react-i18next';
@@ -30,6 +28,7 @@ import { labPreferSelectors, preferenceSelectors, settingsSelectors } from '@/st
 import { useAgentId } from '../hooks/useAgentId';
 import { useChatInputStore, useStoreApi } from '../store';
 import Placeholder from './Placeholder';
+import { useSlashItems } from './useSlashItems';
 
 const className = cx(css`
   p {
@@ -59,6 +58,7 @@ const InputEditor = memo<{ defaultRows?: number }>(({ defaultRows = 2 }) => {
   const useCmdEnterToSend = useUserStore(preferenceSelectors.useCmdEnterToSend);
 
   const enableMention = !!mentionItems && mentionItems.length > 0;
+  const slashItems = useSlashItems();
 
   // Get agent's model info for vision support check and handle paste upload
   const agentId = useAgentId();
@@ -154,16 +154,7 @@ const InputEditor = memo<{ defaultRows?: number }>(({ defaultRows = 2 }) => {
           : undefined
       }
       slashOption={{
-        items: [
-          {
-            icon: Table2Icon,
-            key: 'table',
-            label: t('typobar.table'),
-            onSelect: (editor) => {
-              editor.dispatchCommand(INSERT_TABLE_COMMAND, { columns: '3', rows: '3' });
-            },
-          },
-        ],
+        items: slashItems,
         renderComp: expand
           ? undefined
           : (props) => {
