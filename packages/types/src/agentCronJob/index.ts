@@ -88,6 +88,7 @@ export const ExecutionConditionsSchema = z
 // Insert schema for creating agent cron jobs
 export const InsertAgentCronJobSchema = z.object({
   agentId: z.string(),
+  channelId: z.string().optional().nullable(),
   content: z.string(), // Allow empty content (when using editData for rich content)
   cronPattern: minimumIntervalSchema,
   description: z.string().optional().nullable(),

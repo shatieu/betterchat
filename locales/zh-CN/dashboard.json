@@ -1,0 +1,21 @@
+{
+  "title": "仪表盘",
+  "widgets.agentOutput.empty": "暂无最近的智能体输出",
+  "widgets.agentOutput.title": "智能体输出",
+  "widgets.agentOutput.viewAll": "查看全部",
+  "widgets.calendar.noJobs": "该日期没有定时任务",
+  "widgets.calendar.title": "日历",
+  "widgets.calendar.upcoming": "即将执行的定时任务",
+  "widgets.cronStats.active": "运行中",
+  "widgets.cronStats.executions": "执行次数",
+  "widgets.cronStats.nearDepletion": "即将用尽",
+  "widgets.cronStats.paused": "已暂停",
+  "widgets.cronStats.title": "定时任务统计",
+  "widgets.cronStats.total": "总数",
+  "widgets.notes.charCount": "{{count}} 个字符",
+  "widgets.notes.placeholder": "在此写下你的笔记...",
+  "widgets.notes.title": "笔记",
+  "widgets.recentConversations.empty": "暂无最近的对话",
+  "widgets.recentConversations.title": "最近对话",
+  "widgets.recentConversations.viewAll": "查看全部"
+}

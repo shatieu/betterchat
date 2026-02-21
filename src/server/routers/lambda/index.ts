@@ -9,6 +9,7 @@ import { topUpRouter } from '@/business/server/lambda-routers/topUp';
 import { publicProcedure, router } from '@/libs/trpc/lambda';
 
 import { agentRouter } from './agent';
+import { agentChannelRouter } from './agentChannel';
 import { agentCronJobRouter } from './agentCronJob';
 import { agentGroupRouter } from './agentGroup';
 import { aiAgentRouter } from './aiAgent';
@@ -51,6 +52,7 @@ import { videoRouter } from './video';
 
 export const lambdaRouter = router({
   agent: agentRouter,
+  agentChannel: agentChannelRouter,
   agentCronJob: agentCronJobRouter,
   aiAgent: aiAgentRouter,
   aiChat: aiChatRouter,

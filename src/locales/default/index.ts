@@ -2,10 +2,13 @@ import agentGroup from './agentGroup';
 import auth from './auth';
 import authError from './authError';
 import changelog from './changelog';
+import channels from './channels';
 import chat from './chat';
 import color from './color';
 import common from './common';
 import components from './components';
+import cron from './cron';
+import dashboard from './dashboard';
 import desktopOnboarding from './desktop-onboarding';
 import discover from './discover';
 import editor from './editor';
@@ -45,10 +48,13 @@ const resources = {
   auth,
   authError,
   changelog,
+  channels,
   chat,
   color,
   common,
   components,
+  cron,
+  dashboard,
   'desktop-onboarding': desktopOnboarding,
   discover,
   editor,

@@ -1,8 +1,10 @@
 import { type LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
+  Clock,
   FilePenIcon,
   Image,
+  LayoutDashboard,
   LibraryBigIcon,
   Settings,
   ShapesIcon,
@@ -97,6 +99,26 @@ export const NAVIGATION_ROUTES: NavigationRoute[] = [
     pathPrefix: '/memory',
   },
   {
+    cmdkKey: 'cmdk.dashboard',
+    electronKey: 'navigation.dashboard',
+    icon: LayoutDashboard,
+    id: 'dashboard',
+    keywords: ['dashboard', 'overview', 'widgets', 'stats'],
+    keywordsKey: 'cmdk.keywords.dashboard',
+    path: '/dashboard',
+    pathPrefix: '/dashboard',
+  },
+  {
+    cmdkKey: 'cmdk.cron',
+    electronKey: 'navigation.cron',
+    icon: Clock,
+    id: 'cron',
+    keywords: ['cron', 'schedule', 'task', 'automation', 'timer'],
+    keywordsKey: 'cmdk.keywords.cron',
+    path: '/cron',
+    pathPrefix: '/cron',
+  },
+  {
     cmdkKey: 'cmdk.settings',
     electronKey: 'navigation.settings',
     icon: Settings,
@@ -119,5 +141,5 @@ export const getRouteById = (id: string): NavigationRoute | undefined =>
  */
 export const getNavigableRoutes = (): NavigationRoute[] =>
   NAVIGATION_ROUTES.filter((r) =>
-    ['community', 'video', 'image', 'resource', 'page', 'memory'].includes(r.id),
+    ['community', 'video', 'image', 'resource', 'page', 'memory', 'dashboard', 'cron'].includes(r.id),
   );

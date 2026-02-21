@@ -1,0 +1,21 @@
+{
+  "title": "Dashboard",
+  "widgets.agentOutput.empty": "No recent agent outputs",
+  "widgets.agentOutput.title": "Agent Output",
+  "widgets.agentOutput.viewAll": "View All",
+  "widgets.calendar.noJobs": "No scheduled jobs for this day",
+  "widgets.calendar.title": "Calendar",
+  "widgets.calendar.upcoming": "Upcoming scheduled jobs",
+  "widgets.cronStats.active": "Active",
+  "widgets.cronStats.executions": "Executions",
+  "widgets.cronStats.nearDepletion": "Near Depletion",
+  "widgets.cronStats.paused": "Paused",
+  "widgets.cronStats.title": "Cron Stats",
+  "widgets.cronStats.total": "Total",
+  "widgets.notes.charCount": "{{count}} characters",
+  "widgets.notes.placeholder": "Write your notes here...",
+  "widgets.notes.title": "Notes",
+  "widgets.recentConversations.empty": "No recent conversations",
+  "widgets.recentConversations.title": "Recent Conversations",
+  "widgets.recentConversations.viewAll": "View All"
+}

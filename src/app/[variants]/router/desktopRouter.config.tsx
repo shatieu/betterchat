@@ -13,6 +13,8 @@ import DesktopMainLayout from '../(main)/_layout';
 import DesktopChatLayout from '../(main)/agent/_layout';
 import DesktopGroupLayout from '../(main)/group/_layout';
 import DesktopImageLayout from '../(main)/image/_layout';
+import DesktopCronLayout from '../(main)/cron/_layout';
+import DesktopDashboardLayout from '../(main)/dashboard/_layout';
 import DesktopMemoryLayout from '../(main)/memory/_layout';
 import DesktopPageLayout from '../(main)/page/_layout';
 import DesktopVideoLayout from '../(main)/video/_layout';
@@ -363,6 +365,35 @@ export const desktopRoutes: RouteConfig[] = [
         element: <DesktopMemoryLayout />,
         errorElement: <ErrorBoundary resetPath="/memory" />,
         path: 'memory',
+      },
+
+      // Dashboard routes
+      {
+        children: [
+          {
+            element: dynamicElement(
+              () => import('../(main)/dashboard'),
+              'Desktop > Dashboard',
+            ),
+            index: true,
+          },
+        ],
+        element: <DesktopDashboardLayout />,
+        errorElement: <ErrorBoundary resetPath="/dashboard" />,
+        path: 'dashboard',
+      },
+
+      // Cron routes
+      {
+        children: [
+          {
+            element: dynamicElement(() => import('../(main)/cron'), 'Desktop > Cron'),
+            index: true,
+          },
+        ],
+        element: <DesktopCronLayout />,
+        errorElement: <ErrorBoundary resetPath="/cron" />,
+        path: 'cron',
       },
 
       // Video routes

@@ -6,6 +6,7 @@ export const createNanoId = (size = 8) =>
   customAlphabet('1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', size);
 
 const prefixes = {
+  agentChannels: 'ch',
   agentCronJobs: 'cron',
   agentSkills: 'skl',
   agents: 'agt',

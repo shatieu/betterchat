@@ -30,12 +30,14 @@ import { labPreferSelectors } from '@/store/user/selectors';
 
 import { type ScheduleType } from './CronConfig';
 import { buildCronPattern, parseCronPattern } from './CronConfig';
+import CronJobChannelSelect from './features/CronJobChannelSelect';
 import CronJobContentEditor from './features/CronJobContentEditor';
 import CronJobHeader from './features/CronJobHeader';
 import CronJobSaveButton from './features/CronJobSaveButton';
 import CronJobScheduleConfig from './features/CronJobScheduleConfig';
 
 interface CronJobDraft {
+  channelId?: string | null;
   content: string;
   cronPattern: string;
   description: string;
@@ -147,6 +149,7 @@ const CronJobDetailPage = memo(() => {
       );
 
       return {
+        channelId: snapshot.channelId ?? null,
         content,
         cronPattern,
         description: snapshot.description?.trim() || null,
@@ -391,6 +394,7 @@ const CronJobDetailPage = memo(() => {
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     const defaultDraft: CronJobDraft = {
+      channelId: null,
       content: '',
       cronPattern: '0 0 * * *', // Default: daily at midnight
       description: '',
@@ -426,6 +430,7 @@ const CronJobDetailPage = memo(() => {
     const parsed = parseCronPattern(cronJob.cronPattern);
 
     const nextDraft: CronJobDraft = {
+      channelId: (cronJob as any).channelId ?? null,
       content: cronJob.content || '',
       cronPattern: cronJob.cronPattern,
       description: cronJob.description || '',
@@ -501,6 +506,12 @@ const CronJobDetailPage = memo(() => {
                 triggerTime={draft.triggerTime}
                 weekdays={draft.weekdays}
                 onScheduleChange={(updates) => updateDraft(updates)}
+              />
+
+              <CronJobChannelSelect
+                agentId={cronListAgentId}
+                channelId={draft.channelId}
+                onChange={(channelId) => updateDraft({ channelId })}
               />
 
               <CronJobContentEditor
