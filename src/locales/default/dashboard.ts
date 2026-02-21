@@ -18,4 +18,20 @@ export default {
   'widgets.recentConversations.empty': 'No recent conversations',
   'widgets.recentConversations.title': 'Recent Conversations',
   'widgets.recentConversations.viewAll': 'View All',
+
+  // Widget system
+  'widgetSystem.addWidget': 'Add Widget',
+  'widgetSystem.configure': 'Configure',
+  'widgetSystem.noWidgets': 'No widgets on your dashboard. Click "Add Widget" to get started.',
+  'widgetSystem.quickActions.agents': 'Agents',
+  'widgetSystem.quickActions.cron': 'Cron Jobs',
+  'widgetSystem.quickActions.newChat': 'New Chat',
+  'widgetSystem.quickActions.settings': 'Settings',
+  'widgetSystem.remove': 'Remove',
+  'widgetSystem.resize': 'Resize',
+  'widgetSystem.sizes.full': 'Full Width',
+  'widgetSystem.sizes.large': 'Large',
+  'widgetSystem.sizes.medium': 'Medium',
+  'widgetSystem.sizes.small': 'Small',
+  'widgetSystem.sizes.wide': 'Wide',
 };
